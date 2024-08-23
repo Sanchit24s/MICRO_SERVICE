@@ -60,6 +60,11 @@ class AuthController {
                 .json({ message: "Something went wrong. Please try again!" });
         }
     }
+
+    static async user(req, res) {
+        const user = req.user;
+        return res.status(200).json({ user: user });
+    }
 }
 
 module.exports = AuthController;
